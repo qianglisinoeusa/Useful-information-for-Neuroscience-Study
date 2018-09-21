@@ -7,9 +7,9 @@
 % The subject saw videos of coherent motion, incoherent motion, and
 % biological motion in separate blocks.
 
-
-clear
-path = 'C:\Research\Courses\Matlab Basics\Lesson12_fMRIAnalysis\OM_Visual\';
+clear all;
+clear;
+path = '.\OM_Visual\';
 
 % The folder above contains 180 dicom images corresponding to the 180 TRs
 % of the experiment. Let's load them and take a look:
@@ -68,7 +68,7 @@ plot(voxel3_persig,'r');
 corr(voxel1,voxel2)
 corr(voxel1,voxel3)
 
-%% Reorganize the data into a 4D matrix that will be easy to access:
+% Reorganize the data into a 4D matrix that will be easy to access:
 
 rows = [1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 5 6 6 6 6 6 6];
 cols = [1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6];
@@ -100,7 +100,7 @@ for tr = 1:180
     pause(0.1)
 end
 
-%% Experimental design - building a model/predictor
+% Experimental design - building a model/predictor
 
 % The structure of the experiment was as follows:
 % 1 = coherent motion, 2 = incoherent motion, 3 = biological motion 
@@ -133,7 +133,7 @@ hold on
 plot(stim_delayed,'g');
 
 
-%% Correlation analysis - identify voxels that are correlated to the stimulus:
+% Correlation analysis - identify voxels that are correlated to the stimulus:
 
 slice = 11;
 th = 0.3;
